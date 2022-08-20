@@ -6,7 +6,7 @@
 int[] GetArray(int size, int minValue, int maxValue)
 {
     int[] res = new int[size];
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < res.Length; i++)
     {
         res[i] = new Random().Next(minValue, maxValue + 1);
         Console.Write($"{res[i]} ");
@@ -18,17 +18,24 @@ Console.WriteLine();
 
 Console.WriteLine("Введите число: ");
 int num = int.Parse(Console.ReadLine());
-
-for (int i = 0; i < 12; i++)
+int unknown = 0;
+for (int i = 0; i < array.Length; i++)
 {
     if (array[i] == num)
     {
-        Console.WriteLine("Да");
+        unknown = 1;
         break;
     }
     else
     {
-        int xcv = ($"Нет");
+        unknown = 2;
     }
-    Console.WriteLine(xcv);
+}
+if (unknown == 1)
+{
+    Console.Write("Да");
+}
+else
+{
+    Console.Write("Нет");
 }
