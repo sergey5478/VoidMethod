@@ -6,7 +6,7 @@
 int[] GetArray(int size, int minValue, int maxValue)
 {
     int[] res = new int[size];
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < res.Length; i++)
     {
         res[i] = new Random().Next(minValue, maxValue + 1);
         Console.Write($"{res[i]} ");
@@ -28,8 +28,8 @@ foreach (int i in array)
     }
     else
     {
-        array1[j] = i * -1;
+        array1[j] = i * -1;        
         j++;
     }
-    Console.Write(j);
+    Console.Write($"{array1[j-1]} ");
 }
