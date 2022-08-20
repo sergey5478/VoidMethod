@@ -3,14 +3,20 @@
 // нулями и единицами в случайном порядке.
 // [1,0,1,1,0,1,0,0]
 
-LenNumber();
-void LenNumber()
+// void LenNumber(int arr)//выводит массив из указанного числа элементов(использует функцию)
+// {
+//     int[] ArrayM = new int[arr];
+//     for (int i = 0; i < ArrayM.Length; i++)
+//     {
+//         ArrayM[i] = new Random().Next(0, 2);
+//         Console.Write($"{ArrayM[i]} ");
+//     }
+// }
+// LenNumber(20);
+
+int[] ArrayM = new int[8]; // выводит массив ровно из 8 элементов
+for (int i = 0; i < ArrayM.Length; i++)
 {
-   int[] ArrayM = new int[8];;
-   Random rnd = new Random();
-   for(int i=0; i<8; i++)
-   {
-    ArrayM[i] = rnd.Next(0,2);
+    ArrayM [i]= new Random().Next(0, 2);
     Console.Write($"{ArrayM[i]} ");
-   }
 }
