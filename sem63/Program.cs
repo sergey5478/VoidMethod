@@ -4,15 +4,17 @@
 3  -> 11
 2  -> 10
 */
+//Без разворота числа получилось
 Console.WriteLine("Введите число ");
 int userNumber = Convert.ToInt32(Console.ReadLine());
 int num = userNumber;
 int remains = 0;
 
-while(num !=0)
+while (num > 0)
 {
-    num = userNumber / 2;
     remains = num % 2;
     Console.Write(remains);
-    
+    num = num / 2;
 }
+
+    
