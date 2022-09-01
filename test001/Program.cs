@@ -1,20 +1,41 @@
-﻿/*Задача 41: Пользователь вводит с клавиатуры M чисел. 
-Посчитайте, сколько чисел больше 0 ввёл пользователь.
-0, 7, 8, -2, -2 -> 2
-1, -7, 567, 89, 223-> 3
-*/
-// Вводим 5 чисел
-// ищу положительные,вывожу количество.
-Console.WriteLine("Введите 5 чисел: ");
-double b1 = Convert.ToDouble(Console.ReadLine());
-double b2 = Convert.ToDouble(Console.ReadLine());
-double b3 = Convert.ToDouble(Console.ReadLine());
-double b4 = Convert.ToDouble(Console.ReadLine());
-double b5 = Convert.ToDouble(Console.ReadLine());
-int amount = 0;
-if(b1>0) amount+=1;
-if(b2>0) amount+=1;
-if(b3>0) amount+=1;
-if(b4>0) amount+=1;
-if(b5>0) amount+=1;
-Console.WriteLine($"Кол-во элементов>0: {amount}");
+﻿int[,,] treeDimensionalArray = new int [2,2,2];
+
+//Применяем методы
+treeDimensionalArray = GetTreeDimensionalArray(treeDimensionalArray);
+PrintTreeDimensionalArray(treeDimensionalArray);
+
+//сделаем метод по заполнению трехмерного массива числами используя обычный сумматор, тогда числа точно не будут повторяться
+
+int[,,] GetTreeDimensionalArray(int[,,] array)
+{
+    int sum = 1;
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            for(int k = 0; k < array.GetLength(2); k++)
+            {
+                array[i,j,k] = sum;
+                sum = sum + array[i,j,k];
+            }
+        }
+    }
+    return array;
+}
+
+
+//теперь сделаем метод для построчного вывода
+void PrintTreeDimensionalArray(int[,,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            for(int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write($"{array[i,j,k]}({i},{j},{k}) ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
